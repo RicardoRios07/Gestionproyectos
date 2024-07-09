@@ -46,14 +46,6 @@ def lista_proyecto(trabajos):
         ) for trabajo in trabajos
     ])
 
-def lista_citas(citas):
-    return rx.hstack(*[
-        rx.box(
-            rx.text(f"Cita con el Dr. {cita.medico_id} para el paciente {cita.paciente_id}"),
-            rx.text(f"Fecha: {cita.fecha} Hora: {cita.hora}"),
-            key=cita.id
-        ) for cita in citas
-    ])
 
 app = rx.App()
 app.add_page(index, route="/")
